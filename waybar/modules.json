@@ -21,9 +21,7 @@
 			"default": ""
         },
         "persistent-workspaces": {
-            // START WORKSPACES
-    "*": 5
-            // END WORKSPACES
+            "*": 5
         }       
     },
 
@@ -63,6 +61,11 @@
         "on-click": "~/dotfiles/apps/ML4W_Welcome-x86_64.AppImage",
         "format": " ",
         "tooltip": false
+    },
+
+    // Empty
+    "custom/empty": {
+        "format": ""
     },
 
     // Youtube Subscriber Count
@@ -114,7 +117,7 @@
     // Settings
     "custom/settings": {
         "format": "",
-        "on-click": "alacritty --class dotfiles-floating -e ~/dotfiles/hypr/start-settings.sh",
+        "on-click": "~/dotfiles/apps/ML4W_Dotfiles_Settings-x86_64.AppImage",
         "tooltip": false
     },
 
@@ -179,7 +182,7 @@
         // START APPS LABEL
         "format": "Apps",
         // END APPS LABEL
-        "on-click": "rofi -show drun -replace",
+        "on-click": "sleep 0.2;rofi -show drun -replace",
         "on-click-right": "~/dotfiles/hypr/scripts/keybindings.sh",
         "tooltip": false
     },
@@ -218,6 +221,7 @@
 
     // Clock
     "clock": {
+        "format": "{:%H:%M %a}",
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         // START CLOCK FORMAT
@@ -334,13 +338,13 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", " ", " "]
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
         },
         "on-click": "pavucontrol"
     },
