@@ -16,18 +16,12 @@ PS1='[\u@\h \W]\$ '
 # ALIASES
 # -----------------------------------------------------
 
-alias c='clear'
 alias nf='neofetch'
 alias pf='pfetch'
 alias ls='eza -al'
 alias shutdown='systemctl poweroff'
 alias v='nvim'
-alias ts='~/dotfiles/scripts/snapshot.sh'
-alias matrix='cmatrix'
 alias wifi='nmtui'
-alias od='~/private/onedrive.sh'
-alias rw='~/dotfiles/waybar/reload.sh'
-alias winclass="xprop | grep 'CLASS'"
 alias dot="cd ~/dotfiles"
 
 # -----------------------------------------------------
@@ -54,6 +48,12 @@ alias notes='nvim ~/notes.txt'
 # -----------------------------------------------------
 eval "$(starship init bash)"
 
+# _____________________________________________________
+# ZOXIDE
+# _____________________________________________________
+eval "$(zoxide init bash)"
+export PATH="/home/arwel/.local/bin"
+alias cd="z"
 
 # _____________________________________________________
 # BASH FUNCTIONS
@@ -62,3 +62,6 @@ source ~/.bash_functions
 
 export PATH="/home/arwel/bin:$PATH"
 export PATH="$PATH:$(go env GOPATH)/bin"
+
+
+
