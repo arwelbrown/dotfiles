@@ -49,19 +49,17 @@ alias notes='nvim ~/notes.txt'
 eval "$(starship init bash)"
 
 # _____________________________________________________
-# ZOXIDE
-# _____________________________________________________
-eval "$(zoxide init bash)"
-export PATH="/home/arwel/.local/bin"
-alias cd="z"
-
-# _____________________________________________________
 # BASH FUNCTIONS
 # _____________________________________________________
 source ~/.bash_functions
 
 export PATH="/home/arwel/bin:$PATH"
-export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="/home/arwel/.local/bin:$PATH"
+export PATH="/usr/bin/go:$PATH"
 
-
+# _____________________________________________________
+# ZOXIDE
+# _____________________________________________________
+eval "$(zoxide init bash)"
+alias cd="z"
 
