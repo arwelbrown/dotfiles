@@ -58,6 +58,13 @@ export PATH="/home/arwel/.local/bin:$PATH"
 export PATH="/usr/bin/go:$PATH"
 
 # _____________________________________________________
+# NVM
+# _____________________________________________________
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# _____________________________________________________
 # ZOXIDE
 # _____________________________________________________
 eval "$(zoxide init bash)"
