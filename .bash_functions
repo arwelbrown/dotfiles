@@ -1,4 +1,4 @@
 dockin() {
-  sudo docker exec -it $1 bash
+  docker exec -it $1 bash
 }
 
