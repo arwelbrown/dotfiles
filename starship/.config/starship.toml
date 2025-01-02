@@ -2,7 +2,7 @@
 
 format = """
 [](surface0)\
-$os\
+$os \
 $username\
 [](bg:peach fg:surface0)\
 $directory\
@@ -23,7 +23,7 @@ $python\
 $docker_context\
 [](fg:blue bg:purple)\
 $time\
-[ ](fg:purple)\
+[ ](fg:purple)\
 $line_break$character"""
 
 palette = 'catppuccin_mocha'
@@ -115,11 +115,17 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:teal"
-format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+format = '[[ $symbol $branch(:$remote_branch) ](fg:base bg:green)]($style)'
 
 [git_status]
 style = "bg:teal"
 format = '[[($all_status$ahead_behind )](fg:base bg:green)]($style)'
+ahead = '⇡${count}'
+diverged = '⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[git_metrics]
+disabled = false
 
 [nodejs]
 symbol = ""
@@ -182,9 +188,9 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:green)'
-error_symbol = '[](bold fg:red)'
-vimcmd_symbol = '[](bold fg:creen)'
-vimcmd_replace_one_symbol = '[](bold fg:purple)'
-vimcmd_replace_symbol = '[](bold fg:purple)'
-vimcmd_visual_symbol = '[](bold fg:lavender)'
+success_symbol = '[ ](bold fg:green)'
+error_symbol = '[ ](bold fg:red)'
+vimcmd_symbol = '[ ](bold fg:green)'
+vimcmd_replace_one_symbol = '[ ](bold fg:purple)'
+vimcmd_replace_symbol = '[ ](bold fg:purple)'
+vimcmd_visual_symbol = '[ ](bold fg:lavender)'
