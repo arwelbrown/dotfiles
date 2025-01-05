@@ -2,6 +2,11 @@ return {
   {
     "williamboman/mason.nvim",
     lazy = false,
+    opts = {
+      ensure_installed = {
+        "gopls"
+      }
+    },
     config = function()
       require("mason").setup()
     end,
@@ -12,7 +17,7 @@ return {
     opts = { auto_install = true },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "intelephense" }
+        ensure_installed = { "lua_ls", "intelephense", "gopls" }
       })
     end
   },
@@ -22,6 +27,7 @@ return {
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
+      local util = require("lspconfig/util")
 
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
@@ -33,6 +39,9 @@ return {
         capabilities = capabilities,
       })
       lspconfig.gopls.setup({
+        cmd = { "gopls" },
+        filetypes = { "go", "gomod", "gowork", "gotmpl" },
+        root_dir = util.root_pattern("go.work", "go.mod", ".git"),
         capabilities = capabilities,
       })
       lspconfig.html.setup({
