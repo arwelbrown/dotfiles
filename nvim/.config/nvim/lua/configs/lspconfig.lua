@@ -20,6 +20,7 @@ lspconfig.servers = {
   "clangd",
   "phpactor",
   "lua_ls",
+  "ols",
 }
 
 local default_servers = {
@@ -29,6 +30,7 @@ local default_servers = {
   "clangd",
   "phpactor",
   "lua_ls",
+  "ols",
 }
 
 -- lsps with default config
@@ -76,5 +78,14 @@ lspconfig.phpactor.setup {
     ["language_server.diagnostics_on_save"] = false,
     ["language_server_phpstan.enabled"] = false,
     ["language_server_psalm.enabled"] = false,
+  },
+
+  lspconfig.ols.setup {
+    init_options = {
+      checker_args = "-strict-style",
+      collections = {
+        { name = "shared", path = vim.fn.expand "$HOME/odin-lib" },
+      },
+    },
   },
 }
